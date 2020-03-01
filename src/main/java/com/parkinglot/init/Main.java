@@ -19,6 +19,7 @@ import static com.parkinglot.constants.Action.*;
 public class Main {
 	static ParkingProcess parkingProcess;
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) throws Exception {
 
 		if (args != null && args.length == 0) {
@@ -33,6 +34,7 @@ public class Main {
 		}
 	}
 
+	@SuppressWarnings("resource")
 	public static void fileProcess(String file) throws Exception {
 		System.out.println("Parking allocation started for the file : " + file);
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(file)));
