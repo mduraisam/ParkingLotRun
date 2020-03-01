@@ -14,6 +14,9 @@ commands from that file.
 # Sequence/Flow Diagram:
 
 
+
+
+
 # Find Run Report:
 
 ## Interactive
@@ -74,7 +77,7 @@ Enter your input:   exit
 
 --------------
 
-# ***File Input***
+## File Input
 
 F:\GIT\ParkingLotRun>"parking_lot file_input.bat"
 
@@ -116,6 +119,5 @@ KA-01-HH-1234,KA-01-HH-9999,KA-01-P-333
 Not found
 
 
-# Pending Actions:
 
 
