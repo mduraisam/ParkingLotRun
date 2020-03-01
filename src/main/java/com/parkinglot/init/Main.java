@@ -2,6 +2,8 @@ package com.parkinglot.init;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
+
 import com.parkinglot.model.Car;
 import com.parkinglot.service.ParkingProcess;
 import static com.parkinglot.constants.Action.*;
@@ -16,10 +18,10 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		System.out.println("Welcome to Parking Lot System!!!");
-		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+		Scanner scanner = new Scanner(System.in);
 		while (true) {
-			String inputLine = bufferRead.readLine();
+			System.out.print("Enter your input:");
+			String inputLine = scanner.nextLine();
 			execute(inputLine);
 		}
 	}
@@ -56,7 +58,7 @@ public class Main {
 			System.exit(0);
 			break;
 		default:
-			System.out.println("Invalid command");
+			System.out.println("Wrong Input, please provide the correct input.");
 			break;
 		}
 	}
