@@ -14,8 +14,10 @@ commands from that file.
 # Sequence/Flow Diagram:
 
 
-# To Run 
+#Find Run Report:
 
+# ***Interactive***
+	
 F:\GIT\ParkingLotRun>parking_lot
 
 F:\GIT\ParkingLotRun>java -jar target/parkinglot-run-0.1.jar
@@ -71,6 +73,8 @@ Not found
 Enter your input:   exit
 
 --------------
+
+# ***File Input***
 
 F:\GIT\ParkingLotRun>"parking_lot file_input.bat"
 
