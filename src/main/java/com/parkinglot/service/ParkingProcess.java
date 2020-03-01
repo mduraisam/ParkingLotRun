@@ -3,17 +3,26 @@ package com.parkinglot.service;
 import java.util.*;
 
 import com.parkinglot.model.Car;
+import static com.parkinglot.constants.Message.*;
 
+/**
+ * @author Durai
+ *
+ */
 public class ParkingProcess {
 
 	private static ParkingProcess parkingLotProcessor = null;
 	private int numParkingSlots = 0;
-
 	private List<Integer> availableSlots;
 	private Map<String, Integer> regNumSlotMap;
 	private Map<Integer, Car> slotCarMap;
 	private Map<String, List<String>> colorMap;
 
+	
+	/**
+	 * 
+	 * @param numParkingSlots
+	 */
 	private ParkingProcess(int numParkingSlots) {
 		this.numParkingSlots = numParkingSlots;
 		availableSlots = new ArrayList<>();
@@ -26,6 +35,11 @@ public class ParkingProcess {
 		System.out.println("User requested " + numParkingSlots + " parking lots created!");
 	}
 
+	/**
+	 * 
+	 * @param numParkingSlots
+	 * @return
+	 */
 	public synchronized static ParkingProcess createParkingLot(int numParkingSlots) {
 
 		if (parkingLotProcessor != null) {
@@ -36,12 +50,16 @@ public class ParkingProcess {
 		}
 	}
 
+	/**
+	 * 
+	 * @param car
+	 */
 	public void allocateSlot(Car car) {
 		if (numParkingSlots == 0) {
-			System.out.println("Sorry, parking lot is not created\n");
+			System.out.println(NOT_CREATED);
 			return;
 		} else if (slotCarMap.size() == numParkingSlots) {
-			System.out.println("Sorry, parking lot is full\n");
+			System.out.println(PARKING_FULL);
 			return;
 		} else {
 			Collections.sort(availableSlots);
@@ -60,35 +78,40 @@ public class ParkingProcess {
 				regNumlst.add(car.getRegNum());
 				colorMap.put(car.getColor(), regNumlst);
 			}
-			System.out.println("Allocated slot number: " + slot + "\n");
+			System.out.println(ALLOCATED_SLOTNUM + slot + NEW_LINE);
 			availableSlots.remove(0);
 		}
 	}
 
+	
 	public void getStatus() {
 		if (numParkingSlots == 0) {
-			System.out.println("Sorry, parking lot is not created \n");
+			System.out.println(NOT_CREATED);
 		} else if (slotCarMap.size() > 0) {
-			System.out.println("Slot No.\t Registration No.\t Color\n");
+			System.out.println(OUTPUT_HEADER);
 			Car car;
 			for (int i = 1; i <= numParkingSlots; i++) {
 				if (slotCarMap.containsKey(i)) {
 					car = slotCarMap.get(i);
-					System.out.println(i + "\t" + car.getRegNum() + "\t" + car.getColor());
+					System.out.println(i + "\t\t" + car.getRegNum() + "\t\t" + car.getColor());
 				}
 			}
 			System.out.println();
 		} else {
-			System.out.println("Parking lot is empty\n");
+			System.out.println(PARKING_EMPTY);
 		}
 	}
 
+	/**
+	 * 
+	 * @param color
+	 */
 	public void getRegNumber(String color) {
 		if (numParkingSlots == 0) {
-			System.out.println("Sorry, parking lot is not created\n");
+			System.out.println(NOT_CREATED);
 		} else if (colorMap.containsKey(color)) {
 			List<String> regNumlst = colorMap.get(color);
-			 System.out.println();
+			System.out.println();
 			for (int i = 0; i < regNumlst.size(); i++) {
 				if (!(i == regNumlst.size() - 1)) {
 					System.out.print(regNumlst.get(i) + ",");
@@ -96,15 +119,19 @@ public class ParkingProcess {
 					System.out.print(regNumlst.get(i));
 				}
 			}
-			 System.out.println();
+			System.out.println();
 		} else {
-			System.out.println("Not found\n");
+			System.out.println(NOT_FOUND);
 		}
 	}
 
+	/**
+	 * 
+	 * @param slotNo
+	 */
 	public void leaveSlot(Integer slotNo) {
 		if (numParkingSlots == 0) {
-			System.out.println("Sorry, parking lot is not created\\n");
+			System.out.println(NOT_CREATED);
 		} else if (slotCarMap.size() > 0) {
 			Car carToLeave = slotCarMap.get(slotNo);
 			if (carToLeave != null) {
@@ -120,13 +147,31 @@ public class ParkingProcess {
 				System.out.println("Slot number " + slotNo + " is already empty\n");
 			}
 		} else {
-			System.out.println("Parking lot is empty\n");
+			System.out.println(PARKING_EMPTY);
 		}
 	}
 
+	/**
+	 * 
+	 * @param RegNum
+	 */
+	public void getSlotNumberForRegNum(String RegNum) {
+		if (numParkingSlots == 0) {
+			System.out.println(NOT_CREATED);
+		} else if (regNumSlotMap.containsKey(RegNum)) {
+			System.out.println(regNumSlotMap.get(RegNum));
+		} else {
+			System.out.println(NOT_FOUND);
+		}
+	}
+
+	/**
+	 * 
+	 * @param color
+	 */
 	public void getSlotNumber(String color) {
 		if (numParkingSlots == 0) {
-			System.out.println("Sorry, parking lot is not created\n");
+			System.out.println(NOT_CREATED);
 		} else if (colorMap.containsKey(color)) {
 			List<String> regNumlst = colorMap.get(color);
 			List<Integer> slotList = new ArrayList<Integer>();
@@ -144,17 +189,7 @@ public class ParkingProcess {
 			}
 			System.out.println();
 		} else {
-			System.out.println("Colour is not found\n");
-		}
-	}
-
-	public void getSlotNumberForRegNum(String RegNum) {
-		if (numParkingSlots == 0) {
-			System.out.println("Sorry, parking lot is not created\n");
-		} else if (regNumSlotMap.containsKey(RegNum)) {
-			System.out.println(regNumSlotMap.get(RegNum));
-		} else {
-			System.out.println("RegNum is not found\n");
+			System.out.println(NOT_FOUND);
 		}
 	}
 

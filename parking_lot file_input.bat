@@ -1,0 +1,1 @@
+java -jar target/parkinglot-run-0.1.jar parking_lot_file_inputs.txt
