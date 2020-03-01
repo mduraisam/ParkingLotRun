@@ -50,13 +50,13 @@ Enter your input:   leave 4
 Slot number 4 is free   
 
 Enter your input:   status   
-Slot No.        Registration No.         Color
+Slot No.          Registration No.          Color
   
-1               KA-01-HH-1234           White  
-2               KA-01-HH-9999           White  
-3               KA-01-BB-0001           Black  
-5               KA-01-HH-2701           Blue  
-6               KA-01-HH-3141           Black  
+1                 KA-01-HH-1234             White  
+2                 KA-01-HH-9999             White  
+3                 KA-01-BB-0001             Black  
+5                 KA-01-HH-2701             Blue  
+6                 KA-01-HH-3141             Black  
 
 Enter your input:   park KA-01-P-333 White  
 Allocated slot number: 4  
@@ -81,44 +81,44 @@ Enter your input:   exit
 
 ## File Input
 
-F:\GIT\ParkingLotRun>"parking_lot file_input.bat"
+F:\GIT\ParkingLotRun>"parking_lot file_input.bat"  
 
-F:\GIT\ParkingLotRun>java -jar target/parkinglot-run-0.1.jar parking_lot_file_inputs.txt
+F:\GIT\ParkingLotRun>java -jar target/parkinglot-run-0.1.jar parking_lot_file_inputs.txt 
 
-Parking allocation started for the file : parking_lot_file_inputs.txt
-User requested 6 parking lots created!
-Allocated slot number: 1
+Parking allocation started for the file : parking_lot_file_inputs.txt  
+User requested 6 parking lots created!   
+Allocated slot number: 1   
 
-Allocated slot number: 2
+Allocated slot number: 2  
 
-Allocated slot number: 3
+Allocated slot number: 3    
 
-Allocated slot number: 4
+Allocated slot number: 4   
 
-Allocated slot number: 5
+Allocated slot number: 5    
 
-Allocated slot number: 6
+Allocated slot number: 6   
 
-Slot number 4 is free
+Slot number 4 is free  
 
-Slot No.        Registration No.         Color
+Slot No.           Registration No.            Color 
 
-1               KA-01-HH-1234           White
-2               KA-01-HH-9999           White
-3               KA-01-BB-0001           Black
-5               KA-01-HH-2701           Blue
-6               KA-01-HH-3141           Black
+1                 KA-01-HH-1234            White
+2                 KA-01-HH-9999            White
+3                 KA-01-BB-0001            Black
+5                 KA-01-HH-2701            Blue
+6                 KA-01-HH-3141            Black
 
-Allocated slot number: 4
+Allocated slot number: 4 
 
-Sorry, parking lot is full
+Sorry, parking lot is full 
 
 
-KA-01-HH-1234,KA-01-HH-9999,KA-01-P-333
+KA-01-HH-1234,KA-01-HH-9999,KA-01-P-333 
 
-1, 2, 4
-6
-Not found
+1, 2, 4  
+6  
+Not found  
 
 
 
