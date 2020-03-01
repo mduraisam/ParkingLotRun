@@ -18,7 +18,6 @@ public class ParkingProcess {
 	private Map<Integer, Car> slotCarMap;
 	private Map<String, List<String>> colorMap;
 
-	
 	/**
 	 * 
 	 * @param numParkingSlots
@@ -32,7 +31,7 @@ public class ParkingProcess {
 		slotCarMap = new HashMap<>();
 		regNumSlotMap = new HashMap<>();
 		colorMap = new HashMap<>();
-		System.out.println("User requested " + numParkingSlots + " parking lots created!");
+		System.out.println("Created a parking lot with " + numParkingSlots + " slots");
 	}
 
 	/**
@@ -83,7 +82,6 @@ public class ParkingProcess {
 		}
 	}
 
-	
 	public void getStatus() {
 		if (numParkingSlots == 0) {
 			System.out.println(NOT_CREATED);

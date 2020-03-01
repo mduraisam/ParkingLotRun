@@ -26,7 +26,7 @@ F:\GIT\ParkingLotRun>parking_lot
 F:\GIT\ParkingLotRun>java -jar target/parkinglot-run-0.1.jar  
 
 Enter your input:   create_parking_lot 6  
-User requested 6 parking lots created!
+Created a parking lot with 6 slots 
 
 Enter your input:   park KA-01-HH-1234 White  
 Allocated slot number: 1  
@@ -77,7 +77,8 @@ Not found
 
 Enter your input:   exit  
 
---------------
+----------------------------
+
 
 ## File Input
 
@@ -85,8 +86,8 @@ F:\GIT\ParkingLotRun>"parking_lot file_input.bat"
 
 F:\GIT\ParkingLotRun>java -jar target/parkinglot-run-0.1.jar parking_lot_file_inputs.txt 
 
-Parking allocation started for the file : parking_lot_file_inputs.txt  
-User requested 6 parking lots created!   
+Parking allocation started for the file : parking_lot_file_inputs.txt   
+Created a parking lot with 6 slots   
 Allocated slot number: 1   
 
 Allocated slot number: 2  
@@ -103,11 +104,11 @@ Slot number 4 is free
 
 Slot No.           Registration No.            Color 
 
-1                 KA-01-HH-1234            White
-2                 KA-01-HH-9999            White
-3                 KA-01-BB-0001            Black
-5                 KA-01-HH-2701            Blue
-6                 KA-01-HH-3141            Black
+1                 KA-01-HH-1234            White  
+2                 KA-01-HH-9999            White  
+3                 KA-01-BB-0001            Black  
+5                 KA-01-HH-2701            Blue  
+6                 KA-01-HH-3141            Black  
 
 Allocated slot number: 4 
 
