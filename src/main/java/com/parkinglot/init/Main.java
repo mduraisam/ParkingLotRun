@@ -1,7 +1,10 @@
 package com.parkinglot.init;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import com.parkinglot.model.Car;
@@ -18,11 +21,24 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		Scanner scanner = new Scanner(System.in);
-		while (true) {
-			System.out.print("Enter your input:");
-			String inputLine = scanner.nextLine();
-			execute(inputLine);
+		if (args != null && args.length == 0) {
+			Scanner scanner = new Scanner(System.in);
+			while (true) {
+				System.out.print("Enter your input:");
+				String inputLine = scanner.nextLine();
+				execute(inputLine);
+			}
+		} else {
+			fileProcess(args[0]);
+		}
+	}
+
+	public static void fileProcess(String file) throws Exception {
+		System.out.println("Parking allocation started for the file : " + file);
+		BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(file)));
+		String line;
+		while ((line = bufferedReader.readLine()) != null) {
+			execute(line);
 		}
 	}
 
